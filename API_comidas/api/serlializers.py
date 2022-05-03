@@ -7,7 +7,7 @@ from drf_writable_nested import WritableNestedModelSerializer
 class AlimentoSerializer(serializers.ModelSerializer):
     class Meta:
         model = Alimento
-        fields = ['nombre', 'categoria',]
+        fields = ['nombre', 'categoria']
 
 class PlatoSerializer(WritableNestedModelSerializer,serializers.ModelSerializer):
     alimento = AlimentoSerializer(many=True)
